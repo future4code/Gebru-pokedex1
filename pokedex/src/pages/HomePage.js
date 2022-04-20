@@ -9,7 +9,7 @@ const HomePage = () =>{
     const navigate = useNavigate()
 
 
-    const [detailsPokemon,setDetailsPokemon,] = useContext(GlobalStateContext)
+    const [detailsPokemon] = useContext(GlobalStateContext)
 
     const Pokemons = detailsPokemon && detailsPokemon.map((pokemon) => {
 
@@ -26,8 +26,6 @@ const HomePage = () =>{
             <h1>HomePage</h1>
             {Pokemons}
             <button onClick={() => goToPokedexPage(navigate)}>Ver Minha POKEDEX</button>
-            <button onClick={() => goToPokemonDetailsPage(navigate)}>Ver Detalhes</button>
-            <button>Adicionar</button>
         </div>
     )
 }

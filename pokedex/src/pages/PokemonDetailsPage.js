@@ -1,18 +1,35 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom'
-import { goToPokedexPage } from '../routes/Coordinator'
+import React, { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { GlobalStateContext } from "../global/GlobalStateContext";
+import { DetailsCard } from '../components/DetailsCard'
 
 const PokemonDetailsPage = () =>{
-    const navigate = useNavigate()
+
+    const [pokeDetails, setPokeDetails] = useState(undefined)
+
+    const [detailsPokemon,  pokedex, setPokedex, teste] = useContext(GlobalStateContext)
+
+    useEffect (() => {
+        getData()
+    },[])
+
+    console.log(pokeDetails)
+
+    const getData = () => {
+        let pokeArray =[]
+        for (let p of detailsPokemon) {
+            if (p.name === teste) {
+                pokeArray = p
+            }
+        }
+        setPokeDetails(pokeArray)
+    }
+
+    const pokemons = pokeDetails && <DetailsCard pokemon={pokeDetails} />
 
     return (
         <div>
-            <h1>Detalhes do Pokemon</h1>
-            <button onClick={() => goToPokedexPage(navigate)}>Voltar</button>
-            <button>Adicionar/Remover da Pokedex</button>
+            {pokemons}
         </div>
     )
 }
