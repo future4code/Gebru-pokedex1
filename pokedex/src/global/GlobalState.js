@@ -45,7 +45,11 @@ const GlobalState = (props) => {
 
         getDetails()
 
-    }, [pokemons])        
+    }, [pokemons]) ;
+    
+
+  
+    
 
 
     return (

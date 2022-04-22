@@ -15,7 +15,10 @@ const HomePage = () =>{
 
         if (pokemon.thePokedex === false) {
             return (
-                <PokeCard name={pokemon.name} photo={pokemon.sprites.front_default} thePokedex={pokemon.isPokedex} button={"add"} />
+                <PokeCard name={pokemon.name} 
+                photo={pokemon.sprites.front_default} 
+                thePokedex={pokemon.isPokedex} 
+                button={"add"} />
             )
         }
 
