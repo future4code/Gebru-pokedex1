@@ -8,7 +8,7 @@ import { GlobalStateContext } from "../global/GlobalStateContext";
 const PokeCard = (props) => {
 
     const navigate = useNavigate()
-    const [detailsPokemon, pokedex, setPokedex] = useContext(GlobalStateContext)
+    const [detailsPokemon, pokedex, setPokedex, teste, setTeste] = useContext(GlobalStateContext)
 
     const addPokemon = (name, photo, thePokedex) => {
 
@@ -32,6 +32,11 @@ const PokeCard = (props) => {
         detailsPokemon[indexRender].thePokedex = false
     }
 
+    const getDetailsOfPokemon = (name) => {
+        setTeste(name)
+        goToPokemonDetailsPage(navigate)
+    }
+
     return (
         <div>
 
@@ -47,7 +52,7 @@ const PokeCard = (props) => {
                         <button onClick={() => addPokemon(props.name, props.photo, props.thePokedex)}>Adicionar Pokemon</button> :
                         <button onClick={() => remove(props.name)}>Remover</button>}
 
-                        <button onClick={() => goToPokemonDetailsPage(navigate, `${props.name}`)}>Detalhes</button>
+                        <button onClick={() => getDetailsOfPokemon(props.name)}>Detalhes</button>
 
                     </div>
 

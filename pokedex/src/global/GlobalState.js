@@ -6,6 +6,7 @@ const GlobalState = (props) => {
     const [pokedex, setPokedex] = useState([])
     const [pokemons, setPokemons] = useState([])
     const [detailsPokemon, setDetailsPokemon] = useState([])
+    const [teste, setTeste] = useState([])
 
     useEffect(() =>{
         getPokemons()
@@ -45,15 +46,14 @@ const GlobalState = (props) => {
 
         getDetails()
 
+
     }, [pokemons]) ;
     
 
-  
-    
 
 
     return (
-        <GlobalStateContext.Provider value={[detailsPokemon, pokedex, setPokedex]}>
+        <GlobalStateContext.Provider value={[detailsPokemon, pokedex, setPokedex, teste, setTeste]}>
             {props.children}
         </GlobalStateContext.Provider>
         )
