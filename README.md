@@ -1,16 +1,16 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Ernandes Bitencourt
+- Jorge Guilherme Schuck
+- Lyon Heitor Escalli
 
-Link do Surge: www.link.com.br
+Link do Surge: powerful-mass.surge.sh
 
 O que funciona:
-- Item 1
-- Item 2
+- Todas as páginas funcionando ok.
 
 O que não funciona: 
-- Item 3
-- Item 4
+- -----
+
+![image](https://user-images.githubusercontent.com/88354028/164872650-2b791810-54b8-4873-bc65-bd127fc103eb.png)
