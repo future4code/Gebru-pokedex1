@@ -8,6 +8,8 @@ const GlobalState = (props) => {
     const [detailsPokemon, setDetailsPokemon] = useState([])
     const [teste, setTeste] = useState([])
 
+    console.log(pokedex)
+
     useEffect(() =>{
         getPokemons()
     }, [])
