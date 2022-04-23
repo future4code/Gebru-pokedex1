@@ -9,12 +9,12 @@ import { GlobalStateContext } from "../global/GlobalStateContext";
 const PokedexPage = () =>{
     const navigate = useNavigate()
 
-    const [pokedex,setPokedex] = useContext(GlobalStateContext)
+    const [detailsPokemon, pokedex, setPokedex] = useContext(GlobalStateContext)
     
-    const removePokedex = (id) => {
+    const removePokedex = (name) => {
         
         
-        const iRemove = (pokedex.findIndex((pokes) => pokes.id === id))
+        const iRemove = (pokedex.findIndex((pokes) => pokes.name === name))
         const newPokedex = [...pokedex];
         newPokedex.splice(iRemove, 1)
         
@@ -24,10 +24,10 @@ const PokedexPage = () =>{
 
     const  listPokedex = pokedex && pokedex.map((pokes)=>{
         return (
-            <div  key={pokes.id}>
-                <img src={pokes.sprites.front_default}/>
+            <div  key={pokes.name}>
+                <img src={pokes.photo}/>
                 {pokes.name}
-                <button onClick={()=> removePokedex (pokes.id)}>remover</button>
+                <button onClick={()=> removePokedex (pokes.name)}>remover</button>
             </div>
         )
     })

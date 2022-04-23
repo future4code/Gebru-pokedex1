@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import styled from "styled-components";
 import { GlobalStateContext } from "../global/GlobalStateContext";
 import { DetailsCard } from '../components/DetailsCard'
 
@@ -12,8 +11,6 @@ const PokemonDetailsPage = () =>{
     useEffect (() => {
         getData()
     },[])
-
-    console.log(pokeDetails)
 
     const getData = () => {
         let pokeArray =[]
