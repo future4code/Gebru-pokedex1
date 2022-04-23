@@ -11,6 +11,7 @@ justify-items: center;
 padding-right: 15px;
 margin-bottom: 20px;
 border: 1px solid black;
+background-color: #FF6347;
 `
 
 const Main = styled.div`
@@ -18,30 +19,52 @@ display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 align-items: center;
 justify-items: center;
+background-color: #F0E68C;
 `
 
 const ContainerOne = styled.div`
 border: 1px solid black;
 padding: 40px 40px 40px 40px;
+background-color: #FF7F50;
+`
+
+const Button = styled.button`
+padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
+  background-color:#191970;
+  border: 1px solid black;
+  color:white;
+  border-radius: 5px;
+  &:hover {
+    background-color: #FFD700;
+    color:black;
+  }
+`
+
+const Body = styled.div`
+position: relative;
+height: 100vh;
+width: 100vw;
+background-color: #F0E68C;
 `
 
 export const DetailsCard = (props) => {
     const navigate = useNavigate()
 
-    return <>
+    return <Body>
     <Header>
-        <button onClick={() => goToPokedexPage(navigate)}>Voltar</button>
+        <Button onClick={() => goToPokedexPage(navigate)}>Voltar</Button>
         <h2>{props.pokemon.name.toUpperCase()}</h2>
-        <button>Adicionar/Remover da Pokedex</button>
+        <Button onClick={() => props.addDeletePokemon(props.pokemon.name, props.pokemon.sprites.front_default)}>Adicionar/Remover da Pokedex</Button>
     </Header>
     <Main>
         <div>
             <ContainerOne>
-            <img src={props.pokemon.sprites.front_default} />
+                <img src={props.pokemon.sprites.front_default} />
             </ContainerOne>
             <br />
             <ContainerOne>
-            <img src={props.pokemon.sprites.back_default} />
+                <img src={props.pokemon.sprites.back_default} />
             </ContainerOne>
         </div>
         <ContainerOne>
@@ -59,13 +82,13 @@ export const DetailsCard = (props) => {
             </ContainerOne>
             <br />
             <ContainerOne>
-            <p><b>Moves: </b></p>
-            <p>{props.pokemon.moves[0].move.name}</p>
-            <p>{props.pokemon.moves[1].move.name}</p>
-            <p>{props.pokemon.moves[2].move.name}</p>
+                <p><b>Moves: </b></p>
+                <p>{props.pokemon.moves[0].move.name}</p>
+                <p>{props.pokemon.moves[1].move.name}</p>
+                <p>{props.pokemon.moves[2].move.name}</p>
             </ContainerOne>
         </div>
     </Main>
 
-    </>
+    </Body>
 }
